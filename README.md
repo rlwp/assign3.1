@@ -15,52 +15,60 @@ This project provisions the following AWS resources:
 **Route Tables** for network traffic control <br>
 
 <h2>GitHub Actions Workflows </h2>
-_Terraform Apply Workflow (.github/workflows/terraform-apply.yaml) <br><br>_
+
+_Terraform Apply Workflow (.github/workflows/terraform-apply.yaml)_
 
 This workflow handles the planning and provisioning of infrastructure: <br>
 <b>Trigger on Pull Request:</b> Runs terraform plan to validate changes and comments the plan on the PR <br>
 <b>Trigger on Push to Main:</b> After PR approval and merge, automatically applies the infrastructure changes <br>
 
-_Terraform Destroy Workflow (.github/workflows/terraform-destroy.yaml) <br><br>_
+_Terraform Destroy Workflow (.github/workflows/terraform-destroy.yaml)_
 
 This workflow handles the destruction of infrastructure: <br>
-<b>Manual Trigger Only:</b> Runs only when manually invoked with required confirmation
-<b>Safety Confirmation:</b> Requires typing "DESTROY" to confirm infrastructure deletion
+<b>Manual Trigger Only:</b> Runs only when manually invoked with required confirmation <br>
+<b>Safety Confirmation:</b> Requires typing "DESTROY" to confirm infrastructure deletion <br>
 <b>Environment Selection:</b> Allows selecting which environment to destroy
 
 <br>
-Prerequisites<br>
+
+<h2>Prerequisites</h2>
 AWS Account with appropriate permissions <br>
 GitHub repository with Actions enabled <br>
-AWS credentials configured as GitHub Secrets: <br>
-`AWS_ACCESS_KEY_ID` <br>
-`AWS_SECRET_ACCESS_KEY` <br>
+AWS credentials configured as GitHub Secrets:
+`AWS_ACCESS_KEY_ID`
+`AWS_SECRET_ACCESS_KEY`
 
 <br>
-Getting Started <br>
-Clone this repository: <br>
----
+
+<h2>Getting Started</h2>
+
+**1. Clone this repository:**
+
 git clone https://github.com/rlwp/assign3.1.git 
 cd Assign3.1
-
 <br>
-Configure AWS Credentials:
+
+**2. Configure AWS Credentials:**
 
 Add AWS credentials as secrets in your GitHub repository settings
 <br>
-Customize Variables:
-<br>
+
+**3. Customize Variables:**
+
 Copy terraform.tfvars.example to terraform.tfvars <br>
 Modify the variables according to your requirements <br>
-Initial Deployment:<br>
+
+**4. Initial Deployment:**
 
 Create a feature branch<br>
 Make your changes<br>
 Push and create a Pull Request<br>
 Review the plan in the PR comments<br>
 Merge to main to apply changes<br>
-Configuration<br>
-Terraform Variables<br>
+
+<h2>Configuration</h2>
+
+<h3>Terraform Variables</h3>
 Key variables that can be configured (see variables.tf for details):<br>
 
 `project_name:` Name of your project <br>
@@ -69,11 +77,12 @@ Key variables that can be configured (see variables.tf for details):<br>
 `vpc_cidr_block:` CIDR block for the VPC network <br>
 `public_subnet_cidr:` CIDR block for the public subnet <br>
 
-GitHub Actions Secrets<br>
-Required GitHub secrets:<br>
+<h3>GitHub Actions Secrets</h3>
+Required GitHub secrets:
 
-`AWS_ACCESS_KEY_ID:` AWS access key ID <br>
-`AWS_SECRET_ACCESS_KEY:` AWS secret access key<br>
+`AWS_ACCESS_KEY_ID:` AWS access key ID
+`AWS_SECRET_ACCESS_KEY:` AWS secret access key
+
 <h2> Security Considerations </h2>
 For production use, consider using AWS OIDC instead of long-lived access keys <br>
 The S3 bucket is configured with server-side encryption by default <br>
