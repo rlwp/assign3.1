@@ -17,14 +17,16 @@ GitHub Actions Workflows
 Terraform Apply Workflow (.github/workflows/terraform-apply.yaml)
 This workflow handles the planning and provisioning of infrastructure:
 
-Trigger on Pull Request: Runs terraform plan to validate changes and comments the plan on the PR
-Trigger on Push to Main: After PR approval and merge, automatically applies the infrastructure changes
+<b>Trigger on Pull Request:</b> Runs terraform plan to validate changes and comments the plan on the PR
+<b>Trigger on Push to Main:</b> After PR approval and merge, automatically applies the infrastructure changes
 Terraform Destroy Workflow (.github/workflows/terraform-destroy.yaml)
 This workflow handles the destruction of infrastructure:
 
-Manual Trigger Only: Runs only when manually invoked with required confirmation
-Safety Confirmation: Requires typing "DESTROY" to confirm infrastructure deletion
-Environment Selection: Allows selecting which environment to destroy
+<b>Manual Trigger Only:</b> Runs only when manually invoked with required confirmation
+<b>Safety Confirmation:</b> Requires typing "DESTROY" to confirm infrastructure deletion
+<b>Environment Selection:</b> Allows selecting which environment to destroy
+
+<br>
 Prerequisites
 AWS Account with appropriate permissions
 GitHub repository with Actions enabled
