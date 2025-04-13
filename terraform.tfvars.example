@@ -1,0 +1,19 @@
+# Example Terraform Variables Configuration
+# Copy this file to terraform.tfvars and modify as needed
+
+# Project configuration
+project_name       = "rudy-workflow"
+environment        = "development"  # development, staging, production
+
+# AWS configuration
+aws_region         = "us-east-1"
+aws_profile        = "default"  # Optional AWS profile name
+
+# Infrastructure settings
+bucket_name_prefix = "terraform-rudy-workflow"
+vpc_cidr_block     = "10.0.0.0/16"
+public_subnet_cidr = "10.0.1.0/24"
+
+# Note: In a CI/CD pipeline, many of these values
+# may be set via environment variables (TF_VAR_*) 
+# or passed as command-line arguments instead. 

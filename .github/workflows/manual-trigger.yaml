@@ -1,0 +1,32 @@
+name: Manual Trigger Example
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to target'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - dev
+          - staging
+          - production
+      deploy_version:
+        description: 'Version to deploy'
+        required: false
+        default: 'latest'
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Confirm manual trigger
+        run: echo "This workflow was manually triggered!"
+        
+      - name: Show environment input
+        run: echo "Running on environment: ${{ github.event.inputs.environment }}"
+        
+      - name: Show deploy version input
+        run: echo "Deploying version: ${{ github.event.inputs.deploy_version }}" 
