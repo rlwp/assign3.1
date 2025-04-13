@@ -1,10 +1,11 @@
 # assign3.1-workflow
 For activity to do workflow via github
 
-Terraform AWS Infrastructure with GitHub Actions CI/CD
+Terraform AWS Infrastructure with GitHub Actions CI/CD <br>
 This repository demonstrates infrastructure as code (IaC) using Terraform to provision AWS resources with automated CI/CD workflows using GitHub Actions.
 
 <b>Infrastructure Overview</b>
+<br>
 This project provisions the following AWS resources:
 
 S3 Bucket with versioning and encryption enabled
@@ -30,11 +31,16 @@ GitHub repository with Actions enabled
 AWS credentials configured as GitHub Secrets:
 AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY
+
+<br>
 Getting Started
 Clone this repository:
-
+```
 git clone https://github.com/rlwp/assign3.1.git
 cd Assign3.1
+```
+
+<br>
 Configure AWS Credentials:
 
 Add AWS credentials as secrets in your GitHub repository settings
