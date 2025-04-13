@@ -34,19 +34,18 @@ This workflow handles the destruction of infrastructure: <br>
 <h2>Prerequisites</h2>
 AWS Account with appropriate permissions <br>
 GitHub repository with Actions enabled <br>
-AWS credentials configured as GitHub Secrets:
-`AWS_ACCESS_KEY_ID`
-`AWS_SECRET_ACCESS_KEY`
+AWS credentials configured as GitHub Secrets: <br>
 
-<br>
+`AWS_ACCESS_KEY_ID` <br>
+`AWS_SECRET_ACCESS_KEY`
 
 <h2>Getting Started</h2>
 
 **1. Clone this repository:**
 
-git clone https://github.com/rlwp/assign3.1.git 
-cd Assign3.1
-<br>
+> git clone https://github.com/rlwp/assign3.1.git <br>
+> cd Assign3.1
+
 
 **2. Configure AWS Credentials:**
 
@@ -80,7 +79,7 @@ Key variables that can be configured (see variables.tf for details):<br>
 <h3>GitHub Actions Secrets</h3>
 Required GitHub secrets:
 
-`AWS_ACCESS_KEY_ID:` AWS access key ID
+`AWS_ACCESS_KEY_ID:` AWS access key ID <br>
 `AWS_SECRET_ACCESS_KEY:` AWS secret access key
 
 <h2> Security Considerations </h2>
